@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Website</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <!-- Video Background -->
+    <div class="video-container">
+        <div class="video-background"></div>
+        <video autoplay muted loop id="bg-video">
+            <source src="videobg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Scrollable content (starting after the video) -->
+    <div class="scrollable-container">
+        <!-- Navbar -->
+        <div class="navbar bg-dark fixed-top">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="myLogo">
+                    <img src="logo.png" alt="myLogo" width="50" height="50">
+                </div>
+
+                <div class="navbarLinks">
+                    <div class="navLink"><a href="#home">Home</a></div>
+                    <div class="navLink dropdown">
+                        <a href="#products" class="dropdown-toggle" id="productsDropdown" aria-expanded="false">Category</a>
+                        <div class="dropdown-menu" id="dropdownMenu">
+                            <a class="dropdown-item" href="#headphones">Headphones</a>
+                            <a class="dropdown-item" href="#keyboards">Keyboards</a>
+                            <a class="dropdown-item" href="#monitors">Monitors</a>
+                            <a class="dropdown-item" href="#processors">Processors</a>
+                        </div>
+                    </div>
+                    <div class="navLink"><a href="#contact">Merchandise</a></div>
+                    <div class="navLink"><a href="#about">About</a></div>
+                    <div class="navLink"><a href="#services">Services</a></div>
+                    
+                </div>
+                
+
+                    <div class="d-flex align-items-center">
+                        <!-- Search Box -->
+                        <div class="search-container">
+                            <div class="search-box">
+                                <button class="search-btn" id="search-btn">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                                <input type="text" class="search-input" id="search-input" placeholder="Search...">
+                            </div>
+                        </div>
+
+                        <!-- Social Media Icons -->
+                        <div class="navbarIcons ms-3">
+                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features-section">
+            <h2 class="features-title">Features</h2>
+            <div class="carousel">
+                <button class="arrow left-arrow">❮</button>
+                <div class="features-container">
+                    <div class="feature-item">
+                        <img src="chessbook.jpg" alt="Chess Book" class="feature-img">
+                        <div class="info-featured-overlay">
+                            <a href="#" style="color: red; text-decoration: none; font-weight: 500;"> Hot <i class="fa fa-fire" aria-hidden="true"></i></a>
+                        </div> 
+                        <p>Chess Book</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="chesscap.jpg" alt="Chess Cap" class="feature-img">
+                        <div class="info-featured-overlay">
+                            <a href="#" style="color: red; text-decoration: none; font-weight: 500;"> Hot <i class="fa fa-fire" aria-hidden="true"></i></a>
+                        </div> 
+                        <p>Chess Cap</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="chesstotebag.jpg" alt="Chess Tote Bag" class="feature-img">
+                        <div class="info-featured-overlay">
+                            <a href="#" style="color: red; text-decoration: none; font-weight: 500;"> Hot <i class="fa fa-fire" aria-hidden="true"></i></a>
+                        </div> 
+                        <p>Chess Tote Bag</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="chesstotebag.jpg" alt="Chess Tote Bag" class="feature-img">
+                        <div class="info-featured-overlay">
+                            <a href="#" style="color: red; text-decoration: none; font-weight: 500;"> Hot <i class="fa fa-fire" aria-hidden="true"></i></a>
+                        </div> 
+                        <p>Chess Tote Bag</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="chesstotebag.jpg" alt="Chess Tote Bag" class="feature-img">
+                        <div class="info-featured-overlay">
+                            <a href="#" style="color: red; text-decoration: none; font-weight: 500;"> Hot <i class="fa fa-fire" aria-hidden="true"></i></a>
+                        </div> 
+                        <p>Chess Tote Bag</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="chesstotebag.jpg" alt="Chess Tote Bag" class="feature-img">
+                        <div class="info-featured-overlay">
+                            <a href="#" style="color: red; text-decoration: none; font-weight: 500;"> Hot <i class="fa fa-fire" aria-hidden="true"></i></a>
+                        </div> 
+                        <p>Chess Tote Bag</p>
+                    </div>
+                    
+                </div>
+                <button class="arrow right-arrow">❯</button>
+            </div>
+        </div>
+                               
+  
+            <!-- Items Section -->
+            <div class="items-section">
+                <hr class="section-line">
+                <h2 class="items-title">Our Products</h2>
+                <div class="items-container">
+                    <div class="item">
+                        <img src="Monitors/m1.jpg" alt="Monitor" class="item-img">
+                        <div class="info-overlay">More Info</div>
+                        <p class="item-description">High-definition monitor with vibrant colors.</p>
+                    </div>
+                    <div class="item">
+                        <img src="Processors/p1.jpg" alt="Processor" class="item-img">
+                        <div class="info-overlay">More Info</div>
+                        <p class="item-description">Fast processor for seamless performance.</p>
+                    </div>
+                    <div class="item">
+                        <img src="Headphones/h2.png" alt="Headphones" class="item-img">
+                        <div class="info-overlay">More Info</div>
+                        <p class="item-description">Noise-canceling headphones for a better experience.</p>
+                    </div>
+                    <div class="item">
+                        <img src="Keyboards/k1.jpg" alt="Keyboard" class="item-img">
+                        <div class="info-overlay">More Info</div>
+                        <p class="item-description">Mechanical keyboard for improved typing.</p>
+                    </div>
+                    <div class="item">
+                        <img src="Monitors/m4.jpg" alt="Monitor" class="item-img">
+                        <div class="info-overlay">More Info</div>
+                        <p class="item-description">Ultra-wide monitor for multitasking.</p>
+                    </div>
+                    <div class="item">
+                        <img src="Processors/p5.jpg" alt="Processor" class="item-img">
+                        <div class="info-overlay">More Info</div>
+                        <p class="item-description">High-performance processor for gaming.</p>
+                    </div>
+                    <div class="item">
+                        <img src="Headphones/h3.jpg" alt="Headphones" class="item-img">
+                        <div class="info-overlay">More Info</div>
+                        <p class="item-description">Wireless headphones with long battery life.</p>
+                    </div>
+                    <div class="item">
+                        <img src="Keyboards/k4.jpg" alt="Keyboard" class="item-img">
+                        <div class="info-overlay">More Info</div>
+                        <p class="item-description">RGB keyboard for a stylish look.</p>
+                    </div>
+                </div>
+            </div>
+
+<!-- Core Gear Tech Description Section -->
+<div class="core-gear-tech-description">
+    <hr class="description-border"> <!-- Decorative line -->
+    <h2 class="description-title">About Core Gear Tech</h2>
+    <p>
+        Core Gear Tech is dedicated to providing high-quality computer hardware and accessories tailored for gamers and tech enthusiasts alike. We believe in offering products that enhance performance and bring innovation to your gaming and productivity experience. Our carefully curated selection includes the latest monitors, processors, headphones, keyboards, and more, ensuring that you have the best tools at your disposal. Join us in exploring a world of cutting-edge technology designed to meet your needs.
+    </p>
+</div>
+
+          
+
+<!-- Footer -->
+<div class="footer">
+    <div class="container text-center">
+        <div class="footer-contents">
+            <p><a class="c">CONTACT US: </a></p>
+            <p><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>: CoreGearTech@gmail.com</a></p>
+            <p><a href="#"><i class="fa fa-home" aria-hidden="true"></i>: Manila Philippines</a></p>
+            <p><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>: 09983499383</a></p>
+        </div>
+        <div class="footer-logo">
+            <img src="logo.png" alt="Core Gear Tech Logo" width="20%"> <!-- Logo -->
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>

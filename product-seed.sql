@@ -1,0 +1,61 @@
+-- Seed data for cgt_products
+-- Run after schema.sql to populate the catalog used by the PHP pages.
+
+INSERT INTO `cgt_products` (
+  `product_id`,
+  `product_name`,
+  `product_desc`,
+  `product_image`,
+  `product_category`,
+  `product_specs`,
+  `product_price`,
+  `quantity`
+) VALUES
+(1, 'CoreView Monitor M1', 'High-definition monitor with vibrant colors.', 'Monitors/m1.png', 'Monitors', '24-inch display, crisp 1080p output', 499.00, 15),
+(2, 'CoreX Processor P2', 'Fast processor for seamless performance.', 'Processor/p2.png', 'Processors', '6-core desktop CPU, built for everyday speed', 1299.00, 12),
+(3, 'CoreX Processor P5', 'High-performance processor for gaming.', 'Processor/p5.png', 'Processors', '8-core gaming CPU with boosted clocks', 2199.00, 10),
+(4, 'Strike Pro Keyboard K5', 'Mechanical keyboard for improved typing.', 'Keyboards/k5.png', 'Keyboards', 'Mechanical switches, durable keycaps', 899.00, 20),
+(5, 'Ember RGB Keyboard K4', 'RGB keyboard for a stylish look.', 'Keyboards/k4.png', 'Keyboards', 'Full-size keyboard with RGB lighting', 999.00, 18),
+(6, 'Pulse Lite Headset H2', 'Noise-canceling headphones for a better experience.', 'Headset/h2.png', 'Headsets', 'Comfort-fit headset with clear audio', 799.00, 14),
+(7, 'Pulse Pro Headset H3', 'Wireless headphones with long battery life.', 'Headset/h3.png', 'Headsets', 'Wireless headset with extended battery life', 1199.00, 11),
+(8, 'Volt 6G Graphics Card EV1-1', 'Entry-level graphics card for smooth 1080p gaming.', 'Graphics Card/ev1.1.png', 'Graphics Card', '6GB GDDR6, single-fan cooler', 2499.00, 8),
+(9, 'Volt 8G Graphics Card MSI1-1', 'High-performance graphics card for gaming.', 'Graphics Card/msi1.1.png', 'Graphics Card', '8GB GDDR6, dual-fan cooling', 3499.00, 6),
+(10, 'Apex UltraWide Monitor M4', 'Ultra-wide monitor for multitasking.', 'Monitors/m4.png', 'Monitors', '27-inch ultra-wide panel, 144Hz refresh', 1599.00, 9),
+(11, 'CoreView Monitor M2', 'Full-HD monitor with clean color output.', 'Monitors/m2.png', 'Monitors', '24-inch IPS display, 1080p', 529.00, 13),
+(12, 'CoreView Monitor M3', 'Everyday monitor with balanced brightness.', 'Monitors/m3.png', 'Monitors', '23.8-inch monitor, sharp image quality', 549.00, 12),
+(13, 'Apex UltraWide Monitor M5', 'Wide-screen monitor for work and play.', 'Monitors/m5.png', 'Monitors', '29-inch ultra-wide panel, anti-glare', 1699.00, 7),
+(14, 'Strike Keyboard K1', 'Compact keyboard for simple setups.', 'Keyboards/k1.png', 'Keyboards', 'Wired keyboard with low-profile keys', 649.00, 16),
+(15, 'Strike Keyboard K2', 'Reliable keyboard for daily use.', 'Keyboards/k2.png', 'Keyboards', 'Full-size keyboard with media keys', 699.00, 15),
+(16, 'Strike Keyboard K3', 'Quiet keyboard with smooth key travel.', 'Keyboards/k3.png', 'Keyboards', 'Silent membrane keyboard', 729.00, 14),
+(17, 'Strike Keyboard K6', 'Durable keyboard with a modern layout.', 'Keyboards/k6.png', 'Keyboards', 'Durable frame with ergonomic design', 859.00, 12),
+(18, 'Pulse Headset H1', 'Entry headset with clear voice output.', 'Headset/h1.png', 'Headsets', 'Stereo headset for calls and music', 699.00, 13),
+(19, 'Pulse Headset H4', 'Comfort headset for long sessions.', 'Headset/h4.png', 'Headsets', 'Soft ear cushions and inline controls', 949.00, 10),
+(20, 'Pulse Headset H5', 'Premium headset with deep bass.', 'Headset/h5.png', 'Headsets', 'USB headset with enhanced bass response', 1299.00, 9),
+(21, 'CoreX Processor P3', 'Balanced processor for multitasking.', 'Processor/p3.png', 'Processors', '6-core CPU with efficient thermals', 1399.00, 11),
+(22, 'CoreX Processor P4', 'Responsive processor for work and play.', 'Processor/p4.png', 'Processors', '6-core processor with boost mode', 1499.00, 10),
+(23, 'CoreX Processor P6', 'Gaming-ready processor with fast performance.', 'Processor/p6.png', 'Processors', '8-core CPU with high turbo clock', 2299.00, 8),
+(24, 'CoreX Processor P7', 'Top-tier processor for demanding builds.', 'Processor/p7.png', 'Processors', '10-core CPU for heavy workloads', 2799.00, 6),
+(25, 'Volt Graphics Card EV1-2', 'Reliable graphics card for modern games.', 'Graphics Card/ev1.2.png', 'Graphics Card', '6GB GDDR6, dual-display support', 2599.00, 7),
+(26, 'Volt Graphics Card EV1-3', 'Smooth graphics card for everyday gaming.', 'Graphics Card/ev1.3.png', 'Graphics Card', '6GB GDDR6, quiet cooling', 2699.00, 7),
+(27, 'Volt Graphics Card EV1-4', 'Compact graphics card for smaller builds.', 'Graphics Card/ev1.4.png', 'Graphics Card', '6GB GDDR6, compact form factor', 2799.00, 7),
+(28, 'Volt Graphics Card EV2-1', 'Balanced graphics card with strong efficiency.', 'Graphics Card/ev2.1.png', 'Graphics Card', '8GB GDDR6, efficient thermal design', 3199.00, 6),
+(29, 'Volt Graphics Card EV2-2', 'Gaming graphics card with solid frame rates.', 'Graphics Card/ev2.2.png', 'Graphics Card', '8GB GDDR6, enhanced boost clocks', 3299.00, 6),
+(30, 'Volt Graphics Card EV2-3', 'High-refresh graphics card for smooth play.', 'Graphics Card/ev2.3.png', 'Graphics Card', '8GB GDDR6, quiet dual-fan cooler', 3399.00, 5),
+(31, 'Volt Graphics Card EV2-4', 'Performance graphics card for bigger games.', 'Graphics Card/ev2.4.png', 'Graphics Card', '8GB GDDR6, metal backplate', 3499.00, 5),
+(32, 'Volt Graphics Card MSI1-2', 'Sturdy graphics card with dependable output.', 'Graphics Card/msi1.2.png', 'Graphics Card', '8GB GDDR6, MSI cooling solution', 3599.00, 5),
+(33, 'Volt Graphics Card MSI1-3', 'Fast graphics card for competitive gaming.', 'Graphics Card/msi1.3.png', 'Graphics Card', '8GB GDDR6, boosted core speed', 3699.00, 5),
+(34, 'Volt Graphics Card MSI1-4', 'Refined graphics card for modern PCs.', 'Graphics Card/msi1.4.png', 'Graphics Card', '8GB GDDR6, reinforced design', 3799.00, 5),
+(35, 'Volt Graphics Card MSI2-1', 'High-end graphics card for 1440p gaming.', 'Graphics Card/msi2.1.png', 'Graphics Card', '8GB GDDR6, premium dual-fan cooling', 3999.00, 4),
+(36, 'Volt Graphics Card MSI2-2', 'Efficient graphics card with rich visuals.', 'Graphics Card/msi2.2.png', 'Graphics Card', '8GB GDDR6, optimized airflow', 4099.00, 4),
+(37, 'Volt Graphics Card MSI2-3', 'Responsive graphics card for fast rendering.', 'Graphics Card/msi2.3.png', 'Graphics Card', '8GB GDDR6, stable boost performance', 4199.00, 4),
+(38, 'Volt Graphics Card MSI2-4', 'Powerful graphics card for demanding setups.', 'Graphics Card/msi2.4.png', 'Graphics Card', '8GB GDDR6, premium cooling', 4299.00, 4)
+ON DUPLICATE KEY UPDATE
+  `product_name` = VALUES(`product_name`),
+  `product_desc` = VALUES(`product_desc`),
+  `product_image` = VALUES(`product_image`),
+  `product_category` = VALUES(`product_category`),
+  `product_specs` = VALUES(`product_specs`),
+  `product_price` = VALUES(`product_price`),
+  `quantity` = VALUES(`quantity`);
+
+ALTER TABLE `cgt_products` AUTO_INCREMENT = 39;

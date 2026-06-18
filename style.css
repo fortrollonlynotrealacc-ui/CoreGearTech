@@ -1,0 +1,1090 @@
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color: rgb(25, 24, 24);
+}
+/* CSS for the video background */
+.items-section1 {
+    position: relative;
+    z-index: 1;
+    color: white; /* Text color to contrast with the video background */
+}
+
+.video-container1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Send the video to the background */
+    overflow: hidden;
+}
+
+#bg-video1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire section */
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1; /* Lower than other elements */
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire viewport */
+    z-index: -1; /* Lower than other elements */
+}
+
+/* Video background overlay */
+.video-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    z-index: 1; 
+    pointer-events: none;
+}
+
+
+/* Navbar styles */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #343a40;
+    transition: top 0.3s;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.navLink a,
+.navbarIcons a {
+    color: #ffffff; 
+    text-decoration: none;
+    margin: 6px;
+}
+
+.navbarLinks {
+    display: flex;
+    margin-right: 250px;
+}
+
+.navbarIcons {
+    margin-left: 20px;
+}
+
+.navbarLinks a:hover {
+    color: rgba(64, 135, 148, 0.7); 
+}
+.navbarIcons a:hover {
+    color:  rgba(64, 135, 148, 0.7); 
+}
+/* Content below video */
+.scrollable-container {
+    margin-top: 100vh; /* Ensure content starts after video */
+    flex: 1;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative; /* Positioning context for the dropdown */
+}
+
+.dropdown-menu {
+    display: none; /* Initially hidden */
+    position: absolute; /* Positioning the dropdown relative to the parent */
+    background-color: #343a40; /* Same background color as navbar */
+    border-radius: 5px;
+    margin-top: 10px; /* Space between dropdown and navbar */
+    z-index: 1000; /* Ensure dropdown is above other content */
+}
+
+.dropdown-item {
+    color: white; /* White text for dropdown items */
+    text-decoration: none;
+    padding: 10px 20px; /* Padding for dropdown items */
+    display: block; /* Make the dropdown items block-level elements */
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Change background on hover */
+}
+
+/* Show the dropdown when it has the 'show' class */
+.dropdown-menu.show {
+    display: block; /* Show the dropdown */
+}
+
+
+/* Features Section Styling */
+.features-section {
+    padding: 50px 0;
+    background-color: rgb(25, 24, 24); 
+    text-align: center;
+}
+
+.features-title {
+    font-size: 2rem;
+    color: white; 
+    margin-bottom: 30px;
+}
+
+.features-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.feature-item {
+    position: relative;
+    width: 200px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature-item:hover {
+    transform: scale(1.1); /* Zoom in the feature item */
+}
+
+.feature-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature-item:hover .feature-img {
+    transform: scale(1.2); /* Zoom in on hover */
+}
+
+.feature-item p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0;
+}
+
+.feature-item {
+    position: relative; /* Positioning context for the overlay */
+    overflow: hidden; /* Hide overflow */
+}
+
+.info-featured-overlay {
+    position: absolute; /* Position overlay absolutely */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    right: 0; /* Align to right */
+    bottom: 0; /* Align to bottom */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for appearance */
+}
+
+.product-item img {
+    height: 400px; /* Adjust height to make it bigger */
+    object-fit: cover; /* Ensures the images fit well */
+}
+.hot-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgb(39, 58, 121);
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+.corousel-item:hover .info-featured-overlay {
+    opacity: 2; /* Show overlay on hover */
+}
+
+
+/* Merchandise Section */
+.merchandise-poster-section {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: rgb(25, 24, 24); /* Background color for the section */
+    color: white;
+    position: relative; /* Necessary for absolute positioning of icons */
+}
+
+/* Poster Image */
+.poster-container {
+    display: inline-block; /* Aligns the image with the icons */
+    margin: 0 50px; /* Adds space on the sides */
+}
+
+.poster-container img {
+    width: 80%;
+    max-width: 900px;
+    max-height: 600px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+}
+/* Merchandise Description */
+.merchandise-description {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.merchandise-description h2 {
+    font-size: 2em; /* Increased font size */
+    color: #fff; /* White text for contrast */
+    margin-bottom: 10px;
+}
+
+.merchandise-description p {
+    font-size: 1em;
+    color: #fdf6f6;
+    margin-bottom: 20px;
+}
+
+.shop-now-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.shop-now-button:hover {
+    background-color: #0056b3;
+}
+
+/* Poster Container */
+.poster-container {
+    position: relative; /* To position the overlay */
+    max-width: 100%; /* Allowing the image to take full width */
+}
+
+.poster-container img {
+    width: 100%; /* Makes the image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Overlay Styles */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Black overlay with transparency */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+    color: white; /* Text color */
+    padding: 20px; /* Padding for inner text */
+}
+
+/* Floating Icons */
+.product-icons {
+    display: flex;
+    flex-direction: column; /* Arrange icons vertically */
+    justify-content: center; /* Center the icons vertically */
+    position: absolute; /* Positioning relative to parent */
+    top: 50%; /* Center them vertically */
+    transform: translateY(-50%); /* Offset by half their height */
+}
+
+.left-icons {
+    left: calc(50% - 450px); /* Position left of the image */
+}
+
+.right-icons {
+    right: calc(50% - 450px); /* Position right of the image */
+}
+
+/* Spacing between icons */
+.product-icons a {
+    margin: 20px 0; /* Space between icons */
+}
+
+/* Icon Styles 
+.icon-circle1 {
+    width: 100px;
+    height: 100px;
+    background-color: transparent; 
+    border: 2px solid rgba(255, 255, 255, 0.5); 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+    font-size: 45px; 
+    color: rgb(199, 194, 194);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 20px; 
+}
+
+.icon-circle1:hover {
+    transform: scale(1.1); 
+}
+
+.icon-circle1::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    box-shadow: 0 0 15px rgba(61, 91, 104, 0.6);
+    animation: pulse 3s infinite;
+}*/
+
+/* New Floating animations */
+@keyframes float-left-1 {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-5px, -10px); }
+    50% { transform: translate(5px, -5px); }
+    75% { transform: translate(-5px, 10px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes float-left-2 {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(10px, 5px); }
+    50% { transform: translate(-10px, -5px); }
+    75% { transform: translate(10px, 0); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes float-left-3 {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-5px, 7px); }
+    50% { transform: translate(5px, 10px); }
+    75% { transform: translate(-5px, -5px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes float-right-1 {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(10px, -5px); }
+    50% { transform: translate(-10px, 5px); }
+    75% { transform: translate(10px, 0); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes float-right-2 {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-10px, 10px); }
+    50% { transform: translate(10px, -5px); }
+    75% { transform: translate(-10px, 0); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes float-right-3 {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-5px, -10px); }
+    50% { transform: translate(5px, 5px); }
+    75% { transform: translate(-5px, 5px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Search Bar Styles */
+.search-container {
+    position: relative;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 0;
+    opacity: 0;
+    padding: 5px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: width 0.5s, opacity 0.5s;
+}
+
+.search-input.show {
+    width: 200px;
+    opacity: 1;
+}
+
+.search-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.search-btn:hover {
+    /*color: #343a40;*/
+    color:rgba(64, 135, 148, 0.7);
+    transition: color 0.3s; 
+}
+
+/* Items Section Styles */
+.items-section {
+    padding: 50px 0; /* Spacing above and below the section */
+    background-color: rgb(25, 24, 24); /* Light background for contrast */
+    color: white;
+    text-align: center; /* Center align text */
+}
+
+.items-title {
+    font-size: 2.5em; /* Increased title size */
+    margin-bottom: 40px; /* Increased spacing below the title */
+}
+
+.items-container {
+    
+    display: flex; /* Use flexbox to arrange items */
+    justify-content: space-around; /* Space items evenly */
+    flex-wrap: wrap; /* Wrap items on small screens */
+}
+
+.item {
+    width: 250px; /* Increased width for each item */
+    margin: 20px; /* Increased spacing between items */
+    padding: 20px; /* Padding inside each item */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease-in-out; /* Animation effect */
+}
+
+/* Scale on hover */
+.item:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.item-img {
+    width: 100%; /* Make the image responsive */
+    border-radius: 5px; /* Slightly round the corners of images */
+}
+
+.item-description {
+    color: black; /* Dark gray text for description */
+    font-size: 0.9em; /* Smaller font size for description */
+}
+/* Section Line */
+.section-line {
+    width: 80%; /* Adjust the width of the line */
+    margin: 20px auto; /* Center the line */
+    border: none; /* Remove default border */
+    height: 2px; /* Height of the line */
+    background-color: white; /* Color of the line */
+}
+
+/* Overlay Styles */
+.items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distributes items evenly */
+}
+
+.item {
+    width: 22%; /* Four items per row (adjust as needed) */
+    margin-bottom: 20px; /* Spacing between rows */
+    text-align: center; /* Center-aligns text */
+    position: relative; /* For overlay positioning */
+}
+
+.item img {
+    max-width: 100%; /* Makes images responsive */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.info-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    color: white; /* Overlay text color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s; /* Smooth transition */
+}
+
+.item:hover .info-overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .item {
+        width: 46%; /* Two items per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        width: 100%; /* One item per row on very small screens */
+    }
+}
+.core-gear-tech-description1 {
+    position: relative; /* Positioning context for child elements */
+    height: 100vh; /* Full height of the screen */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.core-gear-tech-description {
+    position: absolute; /* Position it over the image */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    display: flex; /* Use flexbox to center text */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    z-index: 1; /* Place above the image */
+}
+
+.image-overlay-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Keep the image behind the overlay */
+}
+
+.fullset-image {
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%; 
+    filter: blur(2px);/* Makes sure the image covers the container */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+}
+
+.text-overlay {
+    background: rgba(0, 0, 0, 0.8); /* Dark overlay with opacity */
+    color: white; /* Text color */
+    padding: 20px; /* Padding inside the overlay */
+    text-align: center; /* Center text */
+    max-width: 800px; /* Constrain text width for better readability */
+    margin: auto; /* Center the overlay */
+}
+
+.core-gear-tech-description h2 {
+    font-size: 2.5rem; /* Increase the size of the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.core-gear-tech-description p {
+    font-size: 1.2rem; /* Increase the size of the text */
+    line-height: 1.5; /* Add line height for better readability */
+    margin: 10px 0; /* Space between paragraphs */
+}
+
+
+/*Meet the team*/
+.core-gear-tech-description1 {
+    background-color: rgb(25, 24, 24); /* Background color for the section */
+    color: white; /* Set text color to white */
+    text-align: center; /* Center-align text */
+    padding: 20px; /* Add padding for better spacing */
+}
+
+.description-title {
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 2.5rem; /* Adjust title size */
+}
+
+.core-gear-tech-description1 p {
+    font-size: 1.2rem; /* Set paragraph font size */
+    line-height: 1.5; /* Increase line height for readability */
+    max-width: 800px; /* Constrain text width */
+    margin: 0 auto; /* Center the paragraphs */
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px; /* Adjust spacing as needed */
+}
+
+.team-member {
+    position: relative;
+    margin: 10px; /* Space between images */
+    width: 200px; /* Fixed width for team member boxes */
+    height: 320px; /* Increased height to accommodate text */
+    text-align: center; /* Center align text */
+    border-radius: 15px; /* Round corners */
+    overflow: hidden; /* Ensure content stays within rounded corners */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.team-member img {
+    width: 100%; /* Full width of the container */
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 15px 15px 0 0; /* Round top corners */
+}
+
+.member-info {
+    background-color: rgba(64, 135, 148, 0.7); /* Semi-transparent background */
+    color: #fff;
+    padding: 10px; /* Added padding for spacing */
+    border-radius: 0 0 15px 15px; /* Round bottom corners */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Smooth fade-in */
+    height: 120px; /* Increased height for the description box */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the text vertically */
+    box-sizing: border-box; /* Include padding in the height */
+}
+
+.team-member:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.team-member:hover .member-info {
+    opacity: 1; /* Show description on hover */
+}
+.section-divider {
+    border: none; /* Remove default border */
+    height: 2px; /* Set height for the line */
+    background-color: #ffffff; /* Set color of the line */
+    margin: 20px 0; /* Margin above and below the line */
+    border-radius: 5px; /* Round the corners of the line */
+}
+
+.glowing-btn {
+    box-shadow: 0 0 10px #1c475c, 0 0 20px #1c475c, 0 0 30px #1c475c, 0 0 40px #1c475c;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.glowing-btn:hover {
+    box-shadow: 0 0 20px #1c475c, 0 0 30px #1c475c, 0 0 40px #1c475c, 0 0 50px #1c475c;
+}
+
+/* Footer styles */
+.footer {
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: auto;
+    position: relative;
+    text-align: center; /* Center the text inside the footer */
+}
+
+.footer-logo {
+    margin-bottom: 10px; 
+}
+.footer-contents{
+    margin-top: 4%; 
+}
+.footer-contents a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.feature-item {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Delay for each feature item */
+.feature-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.feature-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.feature-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.feature-item:nth-child(4) {
+    animation-delay: 0.8s;
+}
+.feature-item:nth-child(5) {
+    animation-delay: 0.10s;
+}
+.feature-item:nth-child(6) {
+    animation-delay: 0.12s;
+}
+.arrow {
+    position: absolute; /* Position arrows absolutely */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust to center */
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+    color: white; /* Arrow color */
+    border: none;
+    padding: 15px; /* Padding for click area */
+    cursor: pointer;
+    z-index: 10; /* Ensure they are above other elements */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.left-arrow {
+    left: 20px; /* Adjust left position */
+}
+
+.right-arrow {
+    right: 20px; /* Adjust right position */
+}
+
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* More opaque on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+        text-align: center; /* Center text on mobile */
+    }
+
+    .content-info {
+        width: 100%; /* Take full width on small screens */
+        margin-bottom: 20px; /* Add space between content blocks */
+    }
+
+    .navbar {
+        height: 60px; /* Reduce navbar height on smaller screens */
+    }
+
+    .content-title {
+        font-size: 50px; /* Adjust font size for mobile */
+    }
+}
+/* Custom Button Styles */
+.btn-primary, .btn-success {
+    padding: 12px 30px; /* Add padding for larger button */
+    font-size: 1.2rem; /* Slightly larger font */
+    font-weight: bold; /* Make the text bold */
+    border-radius: 50px; /* Rounded button edges */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    text-transform: uppercase; /* Uppercase text */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+.btn-success:hover{
+    background-color: #0f1d2e; /* Keep the blue color */
+    color: white; /* White text on hover */
+    box-shadow: 0 6px 20px rgba(60, 76, 93, 0.7); /* Blue glow on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+/* Primary Button Hover (Shop Now button) */
+.btn-primary:hover {
+    background-color: #5AA1F0; /* Keep the blue color */
+    color: white; /* White text on hover */
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.7); /* Blue glow on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Sign Up and Register */
+.sign-register a {
+    font-size: 14px;
+    text-decoration: none;
+    color: white; /* Text color */
+    padding: 8px 16px; /* Padding for better clickability */
+    border-radius: 5px; /* Rounded corners */
+    transition: color 0.3s, border-bottom 0.3s; /* Smooth transition for hover effects */
+}
+
+.sign-register a:hover {
+    /*color: rgb(100, 100, 100); */
+    color:  rgba(64, 135, 148, 0.7);
+    border-bottom: 1px solid white; /* Underline effect on hover */
+}
+
+/* Collections Section */
+
+.new-products{
+    background-color: rgb(25, 24, 24);
+    color: white;
+}
+.collections h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 0%;
+  }
+
+  .collection-card {
+    background-color: #0097b2;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    min-height: 60px;
+    transition: transform 0.3s;
+}
+
+ 
+  .collection-card:hover {
+    transform: scale(1.05);
+  }
+
+  
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  outline: none; 
+}
+
+
+#newProductsCarousel:hover .carousel-control-prev,
+#newProductsCarousel:hover .carousel-control-next {
+  opacity: 1;
+}
+
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus,
+.carousel-control-prev:active,
+.carousel-control-next:active {
+  opacity: 0;
+  outline: none; 
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+
+.carousel-control-prev {
+  left: 15px;
+}
+
+.carousel-control-next {
+  right: 15px;
+}
+
+#newProductsCarousel {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 15px;
+  height: 15px;
+  background-size: 100%, 100%;
+}
+
+#newProductsCarousel .carousel-item img {
+  transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+#newProductsCarousel .carousel-item img:hover {
+  transform: scale(1.05); 
+  opacity: 0.9; 
+}
+.carousel-item{
+    margin-left: 10%;
+    width: 80%;
+}
+/* Hot Overlay Styles */
+.product-item {
+    position: relative; /* Position relative for the overlay */
+    overflow: hidden; /* Hide any overflow for clean edges */
+}
+
+.hot-overlay {
+    content: 'HOT!'; /* Text to display */
+    position: absolute;
+    top: 10px; /* Position from the top */
+    right: 10px; /* Position from the right */
+    background: rgb(18, 53, 80);
+    color: white; /* Text color */
+    font-size: 1em; /* Font size */
+    font-weight: bold; /* Make it bold */
+    padding: 5px 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    opacity: 0; /* Hide overlay by default */
+    transition: opacity 0.3s; /* Smooth transition */
+}
+
+/* Show the overlay on hover */
+.product-item:hover .hot-overlay {
+    opacity: 1; /* Show the overlay */
+}
+
+/*Cover*/
+.btn1 {
+    margin-left: 5%;
+    position: absolute;
+    margin-top: 30%;
+    color: #ffffff;
+    background-color: #0064B2;
+    border-radius: 20px; /* Increased for a biffier look */
+    padding: 10px 20px; /* Add padding for more size */
+}
+
+.btn2 {
+    margin-left: 15%;
+    position: absolute;
+    margin-top: 30%;
+    color: #ffffff;
+    background-color: rgb(57, 56, 56);
+    border-radius: 20px; /* Increased for a biffier look */
+    padding: 10px 20px; /* Add padding for more size */
+}
+
+.item-name{
+    margin-left: 5%;
+    position: absolute;
+  margin-top: 19%;
+  color: #ffffff;
+}
+.item-descriptions{
+   position: absolute;
+    color: #ffffff;
+    font-weight: 500;
+    margin-left: 5%;
+    margin-top: 25%;
+}
+
+.image-container{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.image-container{
+    height: 80vmin;
+    width: 160vmin;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 55%;
+    left: 50%;
+    border-radius: 8px;
+ 
+}
+.image-wrapper{
+   
+  padding-left: 48%;
+  height: 80vmin;
+  width: 160vmin;
+  
+
+}
+.slider-wrapper {
+    display: flex; 
+    overflow-x: hidden;
+}
+.img{
+width: 78%;
+
+}
+
+.items.active {
+    display: flex; /* Display only the active item */
+}
+.items{
+    width: 100%;
+    height: 100%;
+    display: none; /* Hide all items by default */
+    background-color:rgba(0, 0, 0, 0.0);
+    animation: slide 25s infinite;
+    flex-shrink: 0;
+    padding-left: 5%;
+
+}
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+}
+
+.slider-wrapper {
+    display: flex; /* Ensure that the items are aligned horizontally */
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+    overflow: hidden; /* Hide overflow to prevent blank space */
+}
+
+/* Center the radio buttons and give them a transparent background */
+.radio-buttons {
+    position: absolute;
+    bottom: 5%; /* Adjust this to move it upwards */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between radio buttons */
+    background-color: transparent; /* Transparent background */
+    padding: 10px;
+    z-index: 10; /* Ensure radio buttons are on top */
+}
+
+/* Hide the default radio buttons */
+.radio-buttons input[type="radio"] {
+    display: none;
+}
+
+/* Style the custom radio buttons */
+.radio-buttons label {
+    width: 20px;
+    height: 20px;
+    border: 2px solid black; /* Border color when not selected */
+    border-radius: 50%; /* Circular shape */
+    background-color: transparent; /* Transparent until selected */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Add a filled circle for the checked state */
+.radio-buttons input[type="radio"]:checked + label {
+    background-color: #007bff; /* Fill circle when selected */
+    border-color: #007bff; /* Border matches the fill */
+}
+
+/* Hover effect */
+.radio-buttons label:hover {
+    background-color: rgba(0, 123, 255, 0.2); /* Light blue hover effect */
+}
+

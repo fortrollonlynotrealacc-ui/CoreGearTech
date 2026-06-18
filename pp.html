@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Gear Tech</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(25, 24, 24);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: #333;
+            width: 100%;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        /* Centering Cart Icon and Dropdown */
+        .navbarIcons {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Cart Dropdown */
+        .cart-dropdown {
+            display: none;
+            position: absolute;
+            top: 30px;
+            width: 300px;
+            background-color: #fff;
+            border: 1px solid #555;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .navbarIcons:hover .cart-dropdown {
+            display: block;
+        }
+
+        .cart-dropdown h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .cart-items {
+            max-height: 150px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item img {
+            width: 40px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-quantity,
+        .cart-item-remove {
+            font-size: 0.9rem;
+            cursor: pointer;
+            color: #ff0000;
+            margin-left: 10px;
+        }
+
+        .cart-total {
+            font-weight: bold;
+            text-align: right;
+            margin: 10px 0;
+            color: #000;
+        }
+
+        .cart-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .cart-buttons .btn {
+            width: 48%;
+            padding: 8px;
+            text-align: center;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .btn-checkout {
+            background-color: #4CAF50;
+        }
+
+        .btn-checkout:hover {
+            background-color: #45a049;
+        }
+
+        .btn-view-cart {
+            background-color: #1c475c;
+        }
+
+        .btn-view-cart:hover {
+            background-color: #173a4a;
+        }
+
+        /* Cart Icon Badge */
+        .cart-badge {
+            background-color: red;
+            color: white;
+            font-size: 0.8rem;
+            padding: 2px 6px;
+            border-radius: 50%;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Centered Cart Icon with Dropdown -->
+        <div class="navbarIcons">
+            <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="cart-badge" id="cart-count">0</span></a>
+            
+            <!-- Cart Dropdown -->
+            <div class="cart-dropdown" id="cart-dropdown">
+                <h3>Your Cart</h3>
+                <div class="cart-items" id="cart-items-list">
+                    <p>No items in the cart</p>
+                </div>
+                <div class="cart-total" id="cart-total">Total: $0.00</div>
+                <div class="cart-buttons">
+                    <button class="btn btn-view-cart" onclick="viewCart()">Go to Cart</button>
+                    <button class="btn btn-checkout" onclick="checkout()">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = []; // Array to store cart items
+
+        function addToCart(productName, productPrice, quantity = 1) {
+            const existingItem = cart.find(item => item.name === productName);
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({ name: productName, price: productPrice, quantity });
+            }
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartCount = document.getElementById("cart-count");
+            const cartItemsList = document.getElementById("cart-items-list");
+            const cartTotal = document.getElementById("cart-total");
+
+            // Update cart count badge
+            cartCount.textContent = cart.length;
+
+            // Clear previous items
+            cartItemsList.innerHTML = "";
+
+            if (cart.length === 0) {
+                cartItemsList.innerHTML = "<p>No items in the cart</p>";
+                cartTotal.textContent = "Total: $0.00";
+            } else {
+                let total = 0;
+
+                cart.forEach((item, index) => {
+                    total += item.price * item.quantity;
+
+                    const itemDiv = document.createElement("div");
+                    itemDiv.className = "cart-item";
+
+                    itemDiv.innerHTML = `
+                        <div class="cart-item-details">
+                            <strong>${item.name}</strong><br>
+                            QTY: ${item.quantity}
+                        </div>
+                        <div class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
+                        <span class="cart-item-remove" onclick="removeFromCart(${index})">&times;</span>
+                    `;
+
+                    cartItemsList.appendChild(itemDiv);
+                });
+
+                cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+            }
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+
+        function viewCart() {
+            alert("Viewing cart");
+        }
+
+        function checkout() {
+            alert("Proceeding to checkout");
+        }
+
+        // Example item to add to cart
+        
+    </script>
+</body>
+</html>
